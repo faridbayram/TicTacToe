@@ -1,0 +1,113 @@
+@{
+    Layout = null;
+}
+@model Core.Models.RegisterRequestModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Register</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #3498db, #2980b9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 2px solid #3498db;
+            background-color: #f8f8f8;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-bottom: 2px solid #2980b9;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="post">
+            @Html.LabelFor(l => l.Email)
+            @Html.TextBoxFor(t => t.Email)
+            
+            @Html.LabelFor(l => l.NickName)
+            @Html.TextBoxFor(t => t.NickName)
+            
+            @Html.LabelFor(l => l.Password)
+            @Html.PasswordFor(p => p.Password)
+            
+            @Html.LabelFor(l => l.ConfirmPassword)
+            @Html.PasswordFor(p => p.ConfirmPassword)
+            
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="login">Login</a></p>
+    </div>
+</body>
+</html>
